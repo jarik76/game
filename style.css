@@ -1,19 +1,45 @@
+:root {
+    /* Основні кольори фону */
+    --bg-body: rgba(33, 60, 88, 0.8);
+    --bg-header: rgb(0, 27, 88);
+    --bg-game: rgba(33, 60, 88);
+
+    /* Кольори тексту */
+    --text-main: rgb(255, 255, 255);
+    --text-header: rgba(255, 255, 255, 0.868);
+    --text-buttons: rgba(204, 206, 228, 0.425);
+
+    /* Колір назви гри */
+    --text-game-name: rgb(204, 204, 204);
+
+    /* Кольори рамок */
+    --border-header: rgb(160, 161, 185);
+    --border-input: #ccc;
+    --border-input-focus: #4e4e4e;
+
+    /* Кольори тіней */
+    --shadow-input: rgba(126, 126, 126, 0.5);
+    --shadow-game: rgba(0, 0, 0, 1);
+}
+
 #imgContact {
     width: 8%;
     height: auto;
     border-radius: 25px;
 }
+
 .contact {
     display: flex;
     margin-top: 20px;
     justify-content: space-between;
     font-size: 30px;
-    
 }
+
 a {
     text-decoration: none;
-    color: black;
+    color: var(--text-main);
 }
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -33,137 +59,106 @@ a {
 }
 
 .col {
-  padding: 15px;
-  flex: 1 1 250px;
+    padding: 15px;
+    flex: 1 1 250px;
+    display: flex;
+    flex-direction: column;
 }
-
 
 .center {
     justify-content: center;
 }
 
-.col-1 {
-    width: 8.333%;
-}
+.col-1 { width: 8.333%; }
+.col-2 { width: 16.666%; }
+.col-3 { width: 25%; }
+.col-4 { width: 33.333%; }
+.col-5 { width: 41.666%; }
+.col-6 { width: 50%; }
+.col-7 { width: 58.333%; }
+.col-8 { width: 66.666%; }
+.col-9 { width: 75%; }
+.col-10 { width: 83.333%; }
+.col-11 { width: 91.666%; }
+.col-12 { width: 100%; }
 
-.col-2 {
-    width: 16.666%;
-}
-
-.col-3 {
-    width: 25%;
-}
-
-.col-4 {
-    width: 33.333%;
-}
-
-.col-5 {
-    width: 41.666%;
-}
-
-.col-6 {
-    width: 50%;
-}
-
-.col-7 {
-    width: 58.333%;
-}
-
-.col-8 {
-    width: 66.666%;
-}
-
-.col-9 {
-    width: 75%;
-}
-
-.col-10 {
-    width: 83.333%;
-}
-
-.col-11 {
-    width: 91.666%;
-}
-
-.col-12 {
-    width: 100%;
-}
 .header-block {
-    display:flex;
+    display: flex;
     justify-content: space-between;
     align-items: center;
-    border: 5px solid rgba(255, 255, 255, 0.425);
-     width: 1145px; 
-    
-    background:  rgb(142, 153, 153);
-    font-family:sans-serif;
-    color: rgba(255, 0, 234, 0.868);
-    margin-right:100px;
-    border-radius:15px;
-    
-    
-    
+    border: 5px solid var(--border-header);
+    width: 1145px; 
+    background: var(--bg-header);
+    font-family: sans-serif;
+    color: var(--text-header);
+    margin-right: 100px;
+    border-radius: 15px;
 }
+
 .header_buttons {
-    display:flex;
+    display: flex;
     justify-content: space-between;
     align-items: center;
     gap: 15px;
     margin-right: 100px;
     font-size: 30px;
-    font-family:sans-serif;
-    color: solid rgba(150, 154, 206, 0.425);
+    font-family: sans-serif;
+    color: var(--text-buttons);
 }
+
 #imgSocial {
     margin-top: 20px;
     width: 45px;
     height: auto;
     border-radius: 10px;
-
 }
+
 #footer {
     display: flex;
     justify-content: space-between;
-    /* align-items: center; */
-    
     flex-direction: column;
-
     width: 1170px;
-
-    font-family:sans-serif;
-    font-family: var(--font-family);
+    font-family: var(--font-family, sans-serif);
     margin-bottom: 20px;
-
 }
+
 #imgContact1 {
     width: 15%;
     height: auto;
     margin-bottom: 20px;
     border-radius: 25px;
 }
+
 input {
     width: 250px;
     padding: 10px;
     margin-bottom: 20px;
-    border: 1px solid #ccc;
+    border: 1px solid var(--border-input);
     border-radius: 6px;
     margin-top: 20px;
 }
+
 input:focus {
     outline: none;
-    border-color: #4e4e4e;
-    box-shadow: 0 0 5px rgba(126, 126, 126, 0.5);
+    border-color: var(--border-input-focus);
+    box-shadow: 0 0 5px var(--shadow-input);
 }
+
 .game {
-    background-color: rgb(131, 143, 143);
+    background-color: var(--bg-game);
     border-radius: 10px;
-    overflow:hidden;
-    cursor:pointer;
-    margin-bottom:20px;
-    box-shadow: 0, 4px, 8px rgba(0,0,0,1);
+    overflow: hidden;
+    cursor: pointer;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px var(--shadow-game);
     padding: 10px;
-    transition: 0.3s
+    transition: 0.3s;
+
+    /* розмір картки */
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    margin-bottom: 0;
 }
 
 .game img {
@@ -171,21 +166,119 @@ input:focus {
     height: 280px;
     object-fit: cover;
     transition: 0.3s;
-    object-fit: cover;
     border-radius: 5px;
 }
+
 .game:hover {
     transform: translateY(-5px);
-    box-shadow: 0, 4px, 8px rgba(0,0,0,1);
+    box-shadow: 0 4px 8px var(--shadow-game);
 }
 
 .game-name {
-margin-top: 10px;
+    margin-top: 10px;
+    color: var(--text-game-name);
+    flex-grow: 1;
 }
+
 body {
-    background-color: rgb(188, 188, 188);
+    background-color: var(--bg-body);
 }
+
 .website_name {
     margin-left: 20px;
     padding: 5px;
 }
+
+
+
+/* СЕКЦІЯ ВІДГУКИ */
+.reviews-section {
+    margin: 60px 0;
+    text-align: center;
+}
+.section-title {
+    font-family: "Red Hat Display", sans-serif;
+    font-size: 28px;
+    color: #ffffff;
+    margin-bottom: 30px;
+}
+.reviews-grid {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.reviewer-name {
+    font-family: "Red Hat Display", sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    color: #ffffff;
+}
+
+.review-text {
+    font-family: "Quicksand", sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #ffffff;
+}
+
+.review-card {
+	background-color: rgb(0, 0, 99);
+	padding: 25px;
+	border-radius: 20px;
+	display: flex;
+	direction: column;
+	flex: 1 1 300px;
+	align-items: left;
+	gap:12px;
+    color: whitesmoke;
+}
+
+
+/* КІНЕЦЬ СЕКЦІЯ ВІДГУКИ */
+/* СЕКЦІЯ СТОРІНКИ */
+.game-image {
+    /* display: flex; */
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    /* text-align: center; */
+    /* justify-content:center;
+    align-items: center; */
+
+}
+.game-name1{
+    display: flex;
+    color: var(--text-game-name);
+    justify-content: center;
+    margin: 5px;
+    font-size: 25px;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.game-div {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+.btn-back {
+    display: inline-block;    
+    background: rgba(33, 60, 88);
+    padding: 10px 75px;
+    border-radius: 8px;
+    justify-content: center;
+    margin-top: 20px;
+    
+}
+.game-name2 {
+    display: flex;
+    color: var(--text-game-name);
+    justify-content: center;
+    margin: 5px;
+    font-size: 20px;
+    font-family: "Red Hat Display", sans-serif;
+}
+
+/* КІНЕЦЬ СЕКЦІЇ СТОРІНКИ */
